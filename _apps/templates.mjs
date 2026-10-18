@@ -59,7 +59,7 @@ const row = (html, wide = false) => `
         </div>
       </div>`;
 
-/* Where this page sits: Nayan Suthar / Apps / AutoPlay / Privacy policy. */
+/* Where this page sits: Nayan Suthar / Apps / Workbench / Privacy policy. */
 function trail(site, steps) {
   const parts = [[site.name, '/'], ['Apps', site.base], ...steps];
   return parts
@@ -89,7 +89,7 @@ ${row(`
           <small class="trail">${trail(site, steps)}</small>`, true)}
 ${body}
 ${row(`
-          <small class="footnote">© ${new Date().getFullYear()} ${esc(site.owner)}${appLinks} · ${link(`mailto:${site.email}`, esc(site.email))}</small>`, true)}
+          <small class="footnote">© ${new Date().getFullYear()} ${esc(site.owner)}${appLinks}</small>`, true)}
     </div>
   </body>
 </html>
@@ -215,11 +215,10 @@ export function privacyPage(site, app) {
       para(`${scopes.length ? `You can revoke ${name}'s access to your Google account at any time on ${link(GOOGLE_PERMISSIONS, "your Google Account's security settings page")}. ` : ''}${t(app.delete)}`)),
     section('Children', para(`${name} isn't meant for children under 13, and doesn't knowingly collect information from them.`)),
     section('Changes to this policy', para('When this policy changes, the date at the top changes too.')),
-    section('Contact', para(`Questions about this policy: ${link(`mailto:${site.email}`, esc(site.email))}.`)),
   ].filter(Boolean);
   return legalPage(site, app, {
     title: 'Privacy policy',
-    lead: `This policy explains what ${name} does with your information. ${name} is published by ${esc(site.owner)}.`,
+    lead: `This policy explains what ${name} does with your information.`,
     description: `How ${app.name} handles your information.`,
     sections,
   });
@@ -230,7 +229,6 @@ export function privacyPage(site, app) {
 export function termsPage(site, app) {
   const t = (s) => text(s, site, app);
   const name = esc(app.name);
-  const owner = esc(site.owner);
   const google = (app.google?.scopes ?? []).length > 0;
   const sections = [
     section(`What ${name} does`, para(t(app.tagline))),
@@ -242,16 +240,15 @@ export function termsPage(site, app) {
       para(`${name} uses YouTube API Services. By using ${name}, you agree to be bound by the ${link(YOUTUBE_TERMS, 'YouTube Terms of Service')}. The ${link(GOOGLE_PRIVACY, 'Google Privacy Policy')} also applies.`)),
     section('No warranty', para(`${name} is provided as is, without warranties of any kind. It may change or stop working at any time.`)),
     section('Limitation of liability',
-      para(`To the fullest extent the law allows, ${owner} isn't liable for any indirect, incidental or consequential loss, or for lost data, content or earnings, that comes from using ${name}.`)),
+      para(`To the fullest extent the law allows, the developer of ${name} isn't liable for any indirect, incidental or consequential loss, or for lost data, content or earnings, that comes from using ${name}.`)),
     section('Stopping',
       para(`You can stop using ${name} at any time.${google ? ` To disconnect it from your Google account, revoke its access on ${link(GOOGLE_PERMISSIONS, "your Google Account's security settings page")}.` : ''}`)),
     section('Changes to these terms',
       para(`When these terms change, the date at the top changes too. Using ${name} after a change means you accept the new terms.`)),
-    section('Contact', para(`Questions about these terms: ${link(`mailto:${site.email}`, esc(site.email))}.`)),
   ].filter(Boolean);
   return legalPage(site, app, {
     title: 'Terms of service',
-    lead: `These terms cover your use of ${name}, published by ${owner}. By using ${name}, you agree to them. If you don't agree, don't use it.`,
+    lead: `These terms cover your use of ${name}. By using ${name}, you agree to them. If you don't agree, don't use it.`,
     description: `The terms for using ${app.name}.`,
     sections,
   });

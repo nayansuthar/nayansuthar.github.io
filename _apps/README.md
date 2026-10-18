@@ -16,7 +16,7 @@ it would publish this folder too.
 
 ```
 _apps/
-  content/site.json             your name, contact email, and the list page's intro
+  content/site.json             your name, and the list page's intro. No email: the site shows none
   content/apps/<slug>/app.json  one folder per app; the folder name is its URL
   content/apps/<slug>/icon.svg  optional; without one, the app gets its first letter
   content/apps/_sample-app/     a template to copy. The _ keeps it out of the build

@@ -1,0 +1,38 @@
+{
+  "name": "Workbench",
+  "tagline": "A personal app that connects the user's own tools and scripts to Google APIs.",
+  "updated": "2026-10-18",
+  "about": [
+    "Workbench is a general-purpose app for personal use. It signs in to Google on the user's behalf, so the tools and scripts on the user's computer can use Google APIs, such as publishing videos to YouTube.",
+    "It's meant for one person's own use: the only Google accounts it connects to are the user's own."
+  ],
+  "features": [
+    "Signs in with Google, so no password is ever stored",
+    "Gives local tools and scripts access to the Google APIs they need",
+    "Publishes videos to YouTube, with their titles, descriptions and thumbnails"
+  ],
+  "howItWorks": "Workbench runs on the user's own computer. It has no server of its own: it talks to Google directly, and nothing it handles is sent anywhere else.",
+  "data": [
+    "Your YouTube channel's basic details, such as its name and ID",
+    "Details of the videos on your channel, such as their titles and status",
+    "The video files, titles, descriptions and thumbnails chosen for publishing"
+  ],
+  "sharing": "Workbench doesn't sell information, use it for advertising, or share it with anyone. It sends information only to Google, to carry out what it's asked to do.",
+  "storage": "When a Google account is connected, Google issues a sign-in token. Workbench saves it in a file on the user's computer and sends it only to Google. Channel and video details are used while a tool runs and aren't stored anywhere else.",
+  "delete": "To remove the saved token too, delete the token file from Workbench's credentials folder.",
+  "google": {
+    "scopes": [
+      {
+        "scope": "https://www.googleapis.com/auth/youtube.upload",
+        "label": "Manage your YouTube videos",
+        "use": "Upload the videos chosen for publishing, with their titles and descriptions."
+      },
+      {
+        "scope": "https://www.googleapis.com/auth/youtube",
+        "label": "Manage your YouTube account",
+        "use": "Read the channel's details and its videos' details, and set the thumbnail of each uploaded video."
+      }
+    ]
+  },
+  "youtube": true
+}
