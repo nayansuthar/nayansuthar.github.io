@@ -1,0 +1,29 @@
+{
+  "name": "Sample App",
+  "tagline": "TODO: one line on what the app does.",
+  "updated": "2026-10-18",
+  "about": [
+    "TODO: a short paragraph on what the app is and who it's for."
+  ],
+  "features": [
+    "TODO: a feature",
+    "TODO: another feature"
+  ],
+  "howItWorks": "TODO: where the app runs, and whether anything is sent to {owner}.",
+  "data": [
+    "TODO: each kind of information the app can see"
+  ],
+  "sharing": "TODO: who the app shares information with, if anyone.",
+  "storage": "TODO: where that information is kept, and for how long.",
+  "delete": "TODO: how someone deletes what the app has kept.",
+  "google": {
+    "scopes": [
+      {
+        "scope": "TODO: scope URL",
+        "label": "TODO: the name Google's consent screen shows for it",
+        "use": "TODO: what the app uses it for."
+      }
+    ]
+  },
+  "youtube": false
+}

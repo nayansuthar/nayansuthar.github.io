@@ -1,0 +1,55 @@
+/**
+  * App pages — loaded after /style.css, and only for what it has no class for.
+  * Colours are the site's: #272343 ink, #E3F6F5 and #BAE8E9 teal.
+  */
+
+/* Where the page sits: Nayan Suthar / Apps / AutoPlay. */
+.trail {
+  display: block;
+  margin: 0 0 64px;
+}
+
+/* App icons. A square with soft corners, unlike the round profile links. */
+.app-icon {
+  display: block;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  margin: 0 0 32px;
+}
+.app-icon--small {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  margin: 0 0 16px;
+}
+.app-icon--letter {
+  background: #E3F6F5;
+  color: #272343;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 64px;
+  text-align: center;
+}
+.app-icon--small.app-icon--letter {
+  font-size: 20px;
+  line-height: 44px;
+}
+
+/* A landing page's lead paragraphs stack, so space them like /about/'s. */
+.profile__desc + .profile__desc {
+  margin-top: 16px;
+}
+
+/* Legal sections are h2s for the outline, sized like /about/'s h3 item titles. */
+.legal h2.resume__item-title {
+  font-size: 1.17em;
+}
+
+/* Scope URLs. */
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+  opacity: 0.6;
+}
